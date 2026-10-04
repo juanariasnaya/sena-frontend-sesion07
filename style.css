@@ -20,6 +20,7 @@ body {
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     width: 300px;
     text-align: center;
+    position: relative;
 }
 
 .product-image {
@@ -56,4 +57,63 @@ body {
 
 .add-to-cart-btn:hover {
     background-color: #2980b9;
+}
+
+
+/* Badge flotante */
+.badge {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    background-color: #e74c3c;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Contenedor del botón y tooltip */
+.button-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+/* Tooltip */
+.tooltip {
+    visibility: hidden;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 12px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%; /* Aparece por encima del botón */
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 0.85rem;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+/* Flecha del tooltip */
+.tooltip::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent;
+}
+
+/* Mostrar el tooltip al hacer hover en el contenedor */
+.button-wrapper:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
 }
