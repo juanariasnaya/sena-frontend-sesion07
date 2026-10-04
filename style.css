@@ -180,3 +180,12 @@ body {
 .product-card {
     animation: slideUpFade 0.8s ease-out forwards;
 }
+
+
+/* Ajustes para la imagen del producto */
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
